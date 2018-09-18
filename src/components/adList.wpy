@@ -32,6 +32,8 @@
         wx.login({
           timeout: 2000,
           success(res) {
+			  console.log("code==",res);
+			  
             login("212121211").then(res => {
 
             }).catch(err => {
