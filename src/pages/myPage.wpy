@@ -1,0 +1,35 @@
+<!--  -->
+<template>
+  <view class='container'>
+	  我的
+  </view>
+</template>
+
+<script>
+  import wepy from 'wepy';
+  export default class myPage extends wepy.page {
+	config = {
+	  navigationBarTitleText: "",
+	};
+
+	data = {};
+
+	components = {};
+
+	methods = {};
+
+	events = {};
+
+	watch = {};
+
+	computed = {};
+
+	onLoad() { };
+
+	onShow() { };
+  }
+</script>
+
+<style lang='less' scoped>
+
+</style>

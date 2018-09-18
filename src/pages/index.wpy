@@ -1,0 +1,36 @@
+<!--  -->
+<template>
+  <view class='container'>
+    <adView></adView>
+  </view>
+</template>
+
+<script>
+  import wepy from 'wepy';
+  import adView from '../components/adList'
+  import shopItem from '../components/shopItem'
+  export default class index extends wepy.page {
+    config = {
+      navigationBarTitleText: ''
+    };
+    data = {};
+    components = {
+      shopItem,
+	  adView
+    };
+    methods = {};
+    events = {};
+    watch = {};
+    computed = {};
+    onLoad() {}
+    onShow() {}
+  }
+
+</script>
+
+<style lang='less' scoped>
+.container{
+	width: 100%;
+	height: 100%;
+}
+</style>
