@@ -1,9 +1,9 @@
 <!--  -->
 <template>
-  <repeat for="[1,2,3,4,5,5,66,7,78,89]" key="index" index="index" item="item">
-    <view class='root'>
-      <image class="img" src="/assets/banner_360_01.png"></image>
-      <text class="txt-title">xxxxxxx任务 ,点击20分钟</text>
+  <repeat for="{{list}}" key="index" index="index" item="item">
+    <view class='root' @tap="click({{index}})">
+      <image class="img" src="{{item.img}}" mode="aspectFill"></image>
+      <text class="txt-title">{{item.title}}</text>
       <!-- <button class="btn" open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="onGotUserInfo"></button> -->
       <button class="btn" @tap="loginAction"></button>
     </view>
@@ -16,7 +16,12 @@
     login
   } from '../utils/apis';
   export default class Example extends wepy.component {
-    props = {};
+    props = {
+      list: {
+        default: null,
+        type: Object
+      }
+    };
 
     data = {};
 
@@ -32,8 +37,8 @@
         wx.login({
           timeout: 2000,
           success(res) {
-			  console.log("code==",res);
-			  
+            console.log("code==", res);
+
             login("212121211").then(res => {
 
             }).catch(err => {
@@ -43,6 +48,12 @@
           fail(err) {
             console.log('errr= ', err);
           }
+        });
+      },
+      click(index) {
+        let path = `detail?img=${this.list[index].img}`
+        wepy.navigateTo({
+          url: path
         });
       }
     };

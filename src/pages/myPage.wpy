@@ -1,35 +1,106 @@
 <!--  -->
 <template>
-  <view class='container'>
-	  我的
+  <view class='container' >
+    <view class="header">
+      <image class="img-head" src="/assets/homeBgShareUserHeader.png"></image>
+      <text class="nick_name">sxx</text>
+      <text class="price">20.0</text>
+    </view>
+    <view class="amount">
+      <view class="item">
+        <view class="item1">
+          提现
+        </view>
+      </view>
+      <view class="item">
+        <view class="item1"> 做任务
+        </view>
+      </view>
+      <view class="item">
+        <view class="item1">
+          逛一逛
+        </view>
+      </view>
+    </view>
   </view>
 </template>
 
 <script>
   import wepy from 'wepy';
   export default class myPage extends wepy.page {
-	config = {
-	  navigationBarTitleText: "",
-	};
+    config = {
+      navigationBarTitleText: "",
+    };
 
-	data = {};
+    data = {};
 
-	components = {};
+    components = {};
 
-	methods = {};
+    methods = {};
 
-	events = {};
+    events = {};
 
-	watch = {};
+    watch = {};
 
-	computed = {};
+    computed = {};
 
-	onLoad() { };
+    onLoad() {};
 
-	onShow() { };
+    onShow() {};
   }
+
 </script>
 
 <style lang='less' scoped>
+  .header {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+
+    .img-head {
+      width: 100rpx;
+      height: 100rpx;
+      margin-left: 32rpx;
+    }
+
+    .nick_name {
+      margin-left: 32rpx;
+    }
+
+    .price {
+      position: absolute;
+      right: 32rpx;
+      color: red;
+    }
+  }
+
+  .amount {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    margin-top: 32rpx;
+    margin-bottom: 32rpx;
+
+    .item {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      width: 100%;
+      align-items: center;
+
+      .item1 {
+        border-radius: 70%;
+        width: 120rpx;
+        height: 120rpx;
+        background-color: red;
+        text-align: center;
+        line-height: 120rpx;
+        color: white;
+        font-size: 32rpx;
+      }
+    }
+  }
 
 </style>

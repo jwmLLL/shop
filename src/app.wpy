@@ -17,7 +17,8 @@
     config = {
       pages: [
         'pages/index',
-		'pages/myPage'
+        'pages/myPage',
+        'pages/detail'
       ],
       window: {
         backgroundTextStyle: 'light',
@@ -26,12 +27,17 @@
         navigationBarTextStyle: 'black'
       },
       tabBar: {
+        color: '#000000',
         list: [{
           pagePath: "pages/index",
-          text: "首页"
+          text: "首页",
+          iconPath: "/assets/index_icon.png",
+          selectedIconPath: "/assets/index_select_icon.png"
         }, {
           pagePath: "pages/myPage",
-          text: "我的"
+          text: "我的",
+          iconPath: "/assets/my_icon.png",
+          selectedIconPath: "/assets/my_select_icon.png"
         }]
       },
     }

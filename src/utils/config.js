@@ -3,7 +3,7 @@ const env = isProd ? 'prod' : 'beta';
 
 const serviceConfig = {
     beta: {
-        API_SERVER: 'http://192.168.92.158:8080',
+        API_SERVER: 'http://192.168.92.47:8080',
     },
     prod: {
         API_SERVER: 'https://api.xiuwu.me',

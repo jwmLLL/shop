@@ -1,0 +1,39 @@
+<!--  -->
+<template>
+  <view class='container'>
+    <image mode="aspectFit" src="{{img}}"></image>
+  </view>
+</template>
+
+<script>
+  import wepy from 'wepy';
+  export default class Example extends wepy.page {
+    config = {
+      navigationBarTitleText: "",
+    };
+
+    data = {
+      img: ""
+    };
+
+    components = {};
+
+    methods = {};
+
+    events = {};
+
+    watch = {};
+
+    computed = {};
+
+    onLoad(option) {
+      this.img = "https://t10.baidu.com/it/u=1885592427,2325314924&fm=175&app=25&f=JPEG?w=640&h=960&s=D59A7D91C4A258A529CDCCCB0300A0B7";
+    };
+
+    onShow() {};
+  }
+
+</script>
+
+<style lang='less' scoped>
+</style>

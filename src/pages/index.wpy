@@ -1,36 +1,118 @@
 <!--  -->
 <template>
   <view class='container'>
-    <adView></adView>
+    <view class="banner" style="width:100%;padding-bottom:32rpx">
+      <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+        <block wx:for="{{imgUrls}}">
+          <swiper-item>
+            <image src="{{item}}" class="slide-image" width="355" height="150" />
+          </swiper-item>
+        </block>
+      </swiper>
+    </view>
+   
+	<adView :list.sync="list"></adView>
   </view>
 </template>
 
 <script>
   import wepy from 'wepy';
-  import adView from '../components/adList'
-  import shopItem from '../components/shopItem'
+  import adView from '../components/adList';
+  import shopItem from '../components/shopItem';
   export default class index extends wepy.page {
     config = {
       navigationBarTitleText: ''
     };
-    data = {};
+    data = {
+      imgUrls: [
+        'http://img02.tooopen.com/images/20150928/tooopen_sy_143912755726.jpg',
+        'http://img06.tooopen.com/images/20160818/tooopen_sy_175866434296.jpg',
+        'http://img06.tooopen.com/images/20160818/tooopen_sy_175833047715.jpg'
+      ],
+      indicatorDots: true,
+      autoplay: true,
+      interval: 5000,
+      duration: 1000,
+	  list:[],
+    };
     components = {
       shopItem,
-	  adView
+      adView
     };
     methods = {};
     events = {};
     watch = {};
     computed = {};
-    onLoad() {}
+    onLoad() {
+		this.list.push({img:"https://t10.baidu.com/it/u=1885592427,2325314924&fm=175&app=25&f=JPEG?w=640&h=960&s=D59A7D91C4A258A529CDCCCB0300A0B7",title:"9月8日，素颜女神王丽坤现身上海机场 网友：名副其实"});
+		this.list.push({img:"https://02imgmini.eastday.com/mobile/20180919/20180919153042_9c8ad620fca5b646a02c5b176ff7512d_1.jpeg",title:"高校校训“德”字为先 四词八字最常见"});
+		this.list.push({img:"http://p9.pstatp.com/origin/pgc-image/1536414637293793d7547e7",title:"选一种姿态，让自己活得无可替代"});
+		this.list.push({img:"/assets/index_icon.png",title:"选一种姿态，让自己活得无可替代"});
+
+	}
     onShow() {}
   }
 
 </script>
 
 <style lang='less' scoped>
-.container{
-	width: 100%;
-	height: 100%;
-}
+  .container {
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+
+    .header {
+      display: flex;
+      width: 100%;
+      flex-direction: row;
+      justify-content: flex-start;
+      align-items: center;
+
+      .img-head {
+        width: 100rpx;
+        height: 100rpx;
+        margin-left: 32rpx;
+      }
+
+      .nick_name {
+        margin-left: 32rpx;
+      }
+
+      .price {
+        position: absolute;
+        right: 32rpx;
+        color: red;
+      }
+    }
+
+    .amount {
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      margin-top: 32rpx;
+	  margin-bottom: 32rpx;
+
+      .item {
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+        width: 100%;
+        align-items: center;
+
+        .item1 {
+          border-radius: 70%;
+          width: 120rpx;
+          height: 120rpx;
+          background-color: red;
+          text-align: center;
+          line-height: 120rpx;
+          color: white;
+          font-size: 32rpx;
+        }
+      }
+    }
+  }
+
 </style>
